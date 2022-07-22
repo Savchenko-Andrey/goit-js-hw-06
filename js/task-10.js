@@ -32,6 +32,7 @@ const divGaleryBoxes = document.querySelector("#boxes");
 inputEl.addEventListener("input", (event) => {
   createBoxes(event.currentTarget.value);
 });
+
 inputEl.addEventListener("input", fn);
 function fn(event) {
   createBoxes(event.currentTarget.value);

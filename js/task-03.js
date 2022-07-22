@@ -42,8 +42,8 @@ function fn(url, alt) {
           `
 }
 
-const cucaracha = images.map(imag => {
+const functionGallaryEl = images.map(imag => {
   return fn(imag.url, imag.alt)
-})
+}).join('')
 
-galleryEl.insertAdjacentHTML('afterbegin', cucaracha);
+galleryEl.insertAdjacentHTML('afterbegin', functionGallaryEl);

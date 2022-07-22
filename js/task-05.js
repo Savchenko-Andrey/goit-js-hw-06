@@ -6,13 +6,13 @@ const inputEl = document.querySelector('#name-input')
 
 const outputEl = document.querySelector('#name-output')
 
-inputEl.addEventListener('input', valueOutput)
-
-function valueOutput(event) {
+inputEl.addEventListener('input', (event) => {
     outputEl.textContent = event.currentTarget.value
-    console.log(outputEl.textContent)
-}
+    
+    if (event.currentTarget.value === "") {
+        outputEl.textContent = "Anonimus"
+    }
+})
 
-function textAnonimusEl() {
-    outputEl.textContent = 'Anonimus'
-}
+
+

@@ -19,74 +19,45 @@
 
 const refItemList = document.querySelectorAll(".item");
 console.log(`Number of categories: ${refItemList.length}`);
+console.log('')
 
 
+const categoriesEl = document.querySelectorAll("h2") 
 
-const refCategories = document.querySelectorAll(".item h2 ");
-const elementsUl = document.querySelectorAll('h2 ');
-
-
+const elements = document.querySelectorAll('.item ul')
 
 
-function fn () {
-    for (const category of refCategories) {
-        console.log(`Category: ${category.textContent}`)
-    
-    }
+const categories = [...categoriesEl]
+const el = [...elements]
 
-    return fn
+let f;
+
+for (const cat of categories) {
+    f += cat;
+    console.log(cat.textContent)
 }
 
-fn()
-
-console.log(`Elements: ${elementsUl.children.length}`)
 
 
 
-// console.log(`Category: ${refCategories1[0].textContent}`);
-
-
-// const productsUl = document.querySelectorAll('ul');
-// // console.log(`Elements: ${AnimalsUl[1].children.length}`)
-
-// const refCategories2 = document.querySelectorAll("h2");
-// console.log(`Category: ${refCategories2[1].textContent}`);
-
-// const productsUl1 = document.querySelectorAll('ul');
-// console.log(`Elements: ${productsUl1[2].children.length}`)
-
-// const refCategories3 = document.querySelectorAll("h2");
-// console.log(`Category: ${refCategories3[2].textContent}`);
-
-// const technologiesUl = document.querySelectorAll('ul');
-// console.log(`Elements: ${technologiesUl[3].children.length}`);
-
-
-// const categoriesEl = document.querySelectorAll("h2");
-// const elementsEl = document.querySelectorAll('#categories ul');
-
-// const categoryEl = [...categoriesEl];
-// const elEl = [...elementsEl];
-
-// const elementsAll = categoryEl.concat(elEl)
-
-
-// console.log((elementsAll))
-
-
-const categoriesEl = document.querySelectorAll('#categories');
+console.log('')
+const x = el.map(function (element) {
+        
+        console.log(`Category: ${f.textContent}`)
+        console.log(`Elements: ${element.children.length}`)
+    })
 
 
 
-for (const category of categoriesEl) {
-    // console.log(`Category: ${category.textContent}`)
-    
-}
 
-// for (const element of elementsEl) {
-    
-//     console.log(`Elements: ${element.children.length}`)
 
-// };    
+
+
+
+
+
+
+
+
 
 
