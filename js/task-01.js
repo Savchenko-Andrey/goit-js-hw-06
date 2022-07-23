@@ -17,47 +17,16 @@
 
 //----------------------------------------------------------
 
+
 const refItemList = document.querySelectorAll(".item");
 console.log(`Number of categories: ${refItemList.length}`);
 console.log('')
 
+const categoriesEl = document.querySelector('#categories')
+const category = [...categoriesEl.children]
 
-const categoriesEl = document.querySelectorAll("h2") 
-
-const elements = document.querySelectorAll('.item ul')
-
-
-const categories = [...categoriesEl]
-const el = [...elements]
-
-let f;
-
-for (const cat of categories) {
-    f += cat;
-    console.log(cat.textContent)
-}
-
-
-
-
-console.log('')
-const x = el.map(function (element) {
-        
-        console.log(`Category: ${f.textContent}`)
-        console.log(`Elements: ${element.children.length}`)
-    })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+category.forEach(item => {
+    console.log(`Category: ${item.firstElementChild.textContent}`)
+    console.log(`Elements: ${item.lastElementChild.children.length}`)
+    console.log('')
+})

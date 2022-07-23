@@ -7,10 +7,9 @@ const textControlEl = document.querySelector('#text')
 
 
 
-
 inputFontSizeControlEl.addEventListener("input", setOutput);
+textControlEl.style.fontSize = '56px'
 
 function setOutput(event) {
     textControlEl.style.fontSize = event.currentTarget.value + 'px'
-    
 }

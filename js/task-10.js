@@ -20,34 +20,40 @@
 // }
 // Создай функцию destroyBoxes(), которая очищает содержимое div#boxes, тем самым удаляя все созданные элементы.
 
-function getRandomHexColor() {
-  return Math.floor(Math.random() * 16777215).toString(16);
-}
+
 
 const onCreateBtn = document.querySelector("button[data-create]");
 const onDestroyBtn = document.querySelector("button[data-destroy]");
 const inputEl = document.querySelector("input");
 const divGaleryBoxes = document.querySelector("#boxes");
+const divAppend = document.createElement("div")
 
-inputEl.addEventListener("input", (event) => {
-  createBoxes(event.currentTarget.value);
-});
-
-inputEl.addEventListener("input", fn);
-function fn(event) {
-  createBoxes(event.currentTarget.value);
+ function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
 }
 
+
+let inputE;
+
+inputEl.addEventListener("blur", (event) => {
+  inputE = event.currentTarget.value;
+ });
+
 function createBoxes(amount) {
+  const step = divGaleryBoxes.children.length
+  
   let divElMagic;
-  for (let i = 1; i <= amount; i += 1) {
+
+  for (let i = 0; i <= amount; i += 1) {
     divElMagic = document.createElement("div");
     divElMagic.classList.add("magic-div");
-    divElMagic.style.width + "10px";
-    divElMagic.style.height + "10px";
+    divElMagic.style.width = `${(step + i) * 10}px`;
+    divElMagic.style.height = `${(step + i) * 10}px`;
 
     divElMagic.style.background = getRandomHexColor();
-    divGaleryBoxes.append(divElMagic);
+    divAppend.append(divElMagic);
   }
 }
 
@@ -56,4 +62,7 @@ function destroyBoxes() {
 }
 
 onDestroyBtn.addEventListener("click", destroyBoxes);
-onCreateBtn.addEventListener("click", createBoxes);
+onCreateBtn.addEventListener("click", () => {
+  createBoxes(inputE);
+  divGaleryBoxes.append(divAppend)
+});
