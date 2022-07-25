@@ -12,10 +12,14 @@ const count = Number(inputDataLength.dataset.length)
 validationInputEl.addEventListener('blur', onCheckInput)
 
 function onCheckInput(event) {
-    if (event.currentTarget.value.length <= count) {
-        validationInputEl.classList.add('valid')
+    if (event.currentTarget.value.length < 6) {
+        validationInputEl.classList.add('invalid')
+    }
+    if (event.currentTarget.value.length === count) {
         validationInputEl.classList.remove('invalid')
-    } else if (event.currentTarget.value.length > count) {
+        validationInputEl.classList.add('valid')
+        
+    } if (event.currentTarget.value.length > count) {
         validationInputEl.classList.remove('valid')
         validationInputEl.classList.add('invalid')
     }

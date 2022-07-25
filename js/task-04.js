@@ -9,13 +9,11 @@ const btnIncrementEl = document.querySelector('button[data-action="increment"]')
 
 
 let counterValue = document.querySelector('#value')
-
-let count = Number(counterValue.innerHTML)
+let count = 0;
 
 
 btnDecrementEl.addEventListener('click', () => {
     counterValue.innerHTML = count -= 1;
-
 })
 
 

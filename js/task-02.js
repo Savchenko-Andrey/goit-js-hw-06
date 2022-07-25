@@ -16,6 +16,7 @@ const ingredients = [
 ];
 
 const ulElement = document.querySelector('#ingredients')
+const el = []
 
 function ingredientsEl(string) {
   
@@ -25,11 +26,11 @@ function ingredientsEl(string) {
   liElement.classList.add('item')
   liElement.textContent = string
 
-  ulElement.append(liElement)
-  return liElement
- 
+  el.push(liElement)
 }
 
 const enumeration = ingredients.map((ingredient) => {
   return ingredientsEl(ingredient)
-});
+}).join('');
+
+ulElement.append(...el)
